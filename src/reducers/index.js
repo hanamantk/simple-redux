@@ -1,9 +1,9 @@
 import {combineReducers} from 'redux';
-import cart from './cart';
-import counter from './counter';
+import data from './quiz';
+//import counter from './counter';
 
 const rootreducer=combineReducers({
-cart,counter
+data
 });
 
 export default rootreducer;

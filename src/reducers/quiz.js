@@ -1,8 +1,11 @@
-export default (state=[],payload)=>{
+import data from './Data';
+
+
+export default (state=data,payload)=>{
 
 	switch(payload.type){
 
-		case 'add': return [...state,payload.item];
+		case 'GET_QZ_DATA': return state;
 				
 				break;
 
@@ -12,3 +15,5 @@ export default (state=[],payload)=>{
 	}
 
 };
+
+

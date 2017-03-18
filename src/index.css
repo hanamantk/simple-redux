@@ -1,5 +1,215 @@
+
 body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
+  
 }
+
+
+.container{
+	width: 80%;
+	background: lightpink;
+	margin:0 auto;
+	
+}
+
+.content{
+	background: lightpink;
+	height: 400px;
+}
+
+.contenttest{
+	background: lightpink;
+	--height: 1400px;
+}
+
+.head{
+	height: 120px;
+	text-align: center;
+	vertical-align: middle;
+	line-height: 120px;
+	font-size: 26px;
+	text-decoration: underline;
+	position: relative;
+	
+}
+
+.test{
+	margin-left: 40%;
+	 margin-top: 3%;
+    
+    
+}
+
+.right-box{
+	float: right;
+	margin-top: 0%;
+	height: 5%;
+	padding: 3%;
+	margin-right: 4%;
+	border: 1px solid;
+	background: skyblue;
+}
+
+.auther{
+		float: right;
+		margin-bottom: 10px;
+	}
+
+
+/*  test Page css*/
+
+#question-body{
+
+	padding-top: 3%;
+	margin-left: 8%;
+	margin-right: 3%;
+	
+}
+
+.question{
+	margin-bottom:5%; 
+}
+
+.qid{
+	margin-right: 5%;
+}
+
+.qn{
+
+	line-height: 25px;
+	float: left;
+	min-width: 100%;
+	margin-bottom: 33px;
+}
+
+.option-list{
+	clear: both;
+}
+
+.option-list ul{
+	list-style-type: none;
+	
+
+}
+.option-list ul li{
+	
+	display: inline-block;
+	margin-right: 58px;
+
+}
+input[type='radio'] { 
+	
+	transform: scale(1.5);
+
+	 }
+.buttons{
+	
+	margin-top: 10%;
+	margin-left: 30%;
+	padding: 10px;
+
+}
+
+.buttons ul{
+	width: 300px;
+	height: 100px;
+	
+}
+.buttons ul li{
+	display: inline-block;
+	margin-right: 30px;
+
+}
+
+.score{
+	margin-left: 40%;
+	height: 400px;
+	background: lightpink;
+}
+
+.score ul li{
+	display: block;
+	margin-top: 20px;
+}
+
+.scoreFont{
+    		font-size: 28px;
+    	}	
+
+.mark{
+    		--background: skyblue;
+    		font-size: 16px;
+    		margin-top: 10%;
+    	}
+  
+
+#timer{
+	float: right;
+	margin-right: 58px;
+}
+
+
+/*---------------------------------------
+		CSS FOR MOBILE PHONE
+ ----------------------------------------*/
+
+@media screen and (max-width: 480px) {
+		.head{
+			font-size: 18px;
+
+		}   
+
+		.test{
+			margin-left: 10%;
+		    margin-top: 3%;
+		}
+
+		.right-box{
+			height: 10%;
+			float: right;
+			background: skyblue;
+		}	
+
+
+		.option-list ul li {
+		    margin-right: 58px;
+		    display: block;
+		    margin-bottom: 13px;
+		}
+
+		.buttons{
+	
+				margin-top: 25%;
+				margin-left: 5%;
+				padding: 5px;
+
+			}
+
+			#question-body{
+				padding: 20px;
+	}
+	.qn{
+		font-size: 13px;
+	}
+
+
+	.option-list ul li {
+		    font-size: 13px;
+		}
+
+			.score {
+    			margin-left: 19%;
+    	}	
+
+    	.scoreFont{
+    		font-size: 20px;
+    	}	
+    	.mark{
+    		--background: skyblue;
+    		font-size: 13px;
+    		margin-top: 10%;
+    	}
+
+}		
