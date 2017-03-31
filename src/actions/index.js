@@ -1,7 +1,7 @@
 
-export const getData = (person) => {
+export const addProject = (project) => {
   return {
-    type: 'GET_QZ_DATA',
-    person
+    type: 'ADD_PROJECT',
+    project
   };
 }

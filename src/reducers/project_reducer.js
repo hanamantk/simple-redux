@@ -1,11 +1,10 @@
-import data from './Data';
 
 
-export default (state=data,payload)=>{
+export default (state=[],payload)=>{
 
 	switch(payload.type){
 
-		case 'GET_QZ_DATA': return state;
+		case 'ADD_PROJECT': return [...state,payload.project];
 				
 				break;
 

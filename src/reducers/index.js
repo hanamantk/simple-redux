@@ -1,5 +1,5 @@
 import {combineReducers} from 'redux';
-import data from './quiz';
+import data from './project_reducer';
 //import counter from './counter';
 
 const rootreducer=combineReducers({

@@ -2,55 +2,107 @@ import React, { Component} from 'react';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import * as actions from '../actions/index';
-import {Link} from 'react-router';
-
-
+import Project from './project';
 
 
 class MyContainer extends Component {
 
   constructor(props) {
+    
     super(props);
 
     this.state = {
-      people: []
-    };
+          name : ''
+  };
+  
+  this.enterProject=this.enterProject.bind(this);
+  this.handleChange=this.handleChange.bind(this);
+}
+  
+  handleChange(e){
+     this.setState({name:e.target.value})
+
   }
 
-    componentWillMount(){
+enterProject(e){
+  
+  var code = (e.keyCode ? e.keyCode : e.which);
+ 
+  if(code == 13 &&this.props.data.length<=6) {
 
-    this.props.actions.getData('jk');
+   let project=this.state.name; 
+   this.props.actions.addProject(project);
+   this.setState({name: ''})
+   
+  }else if(code == 13 &&this.props.data.length >6){
 
-    }
+    alert('--------------PROJECT IS STACK FULL------------')
+  }
 
+}
   render() {
-       
-        let {data}=this.props;
         
+        let projects=this.props.data;
+        let pcount =projects.length;
+           var proj= projects.map((project)=>{
+
+                return <Project pname={project}/> 
+            })
         
       return (
               <div className="container">
-                      <header className="head">
-                       Test Your Skill 
-                      </header>
-                      <hr></hr>
-                  
-                  <div className="content">
-                     <div className="test">
-                        <input type="radio" name="lang" id="php"/>PHP<br/><br/>
-                        <input type="radio" name="lang" id="jscript" />Java Script<br/><br/>
-                        <Link to={{ pathname: '/test',query:{}}}>
-                        <button >Take Test</button>
-                      </Link>
-                      </div>
-                      <div className="right-box">
-                       Time            : 10 min<br/>
-                       Total Questions : 10
+              <div className="project">
+              <div className="tab-head">
+                  <label>Add Project</label>
+                  <input type="text" id="project" onKeyPress={this.enterProject} onChange={this.handleChange} value={this.state.name}  />
+                
+                <div className="rght">
+                     <p>TOTAL</p>
+                     <input type="text"  style={{'height':'40px','width':'70px'}} value={pcount+" projects"} />
+                 </div>
+
                   </div>
-                  <marquee className="mark">This is  basic Quiz app built with react js and  redux  by- <i>Hanamant k</i> </marquee>
+                </div>
+                <div style={{'clear':'both'}}></div>
+
+
+                 <div className="column1">
+
+                 <div className="proj-title">
+                    <span className="task"> To do</span>
+                    <div className="rght">
+                        <input type="text" style={{'height':'40px','width':'90px'}} value={pcount+" projects"} />
+                    </div>
+                 </div>
+                  {proj}
                   
-                  </div>
+                 </div>
+
+                 <div className="column1">
+
+                 <div className="proj-title">
+                    <span className="task"> IN Progress</span>
+                    <div className="rght">
+                        <input type="text" style={{'height':'40px','width':'70px'}} value={"2 projects"} />
+                    </div>
+                 </div>
+                  <span className="tab">project 7</span>
+                  <span className="tab">project 8</span>
+                  
+                 </div>
                    
+                   <div className="column1">
+
+                 <div className="proj-title">
+                    <span className="task"> Done</span>
+                    <div className="rght">
+                        <input type="text" style={{'height':'40px','width':'70px'}} value="2 projects" />
+                    </div>
+                 </div>
+                  <span className="tab">project 9</span>
+                  <span className="tab">project 10</span>
+                  
+                 </div>
               </div>
     );
   }
